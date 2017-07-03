@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion globalCompileSdkVersion
+    buildToolsVersion globalBuildToolsVersion
+
+    defaultConfig {
+        applicationId appId
+        minSdkVersion globalMinSdkVersion
+        targetSdkVersion globalTargetSdkVersion
+        versionCode globalVersionCode
+        versionName globalVersionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def forceCompile(library) {
+    dependencies.compile (library) {
+        force = true
+    }
+}
+
+dependencies {
+    compile project(':base')
+
+    forceCompile ("com.android.support:appcompat-v7:$supportVersion")
+}

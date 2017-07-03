@@ -1,0 +1,13 @@
+ext {
+    appId = 'ma.makar.mapview'
+
+    globalCompileSdkVersion = 25
+    globalBuildToolsVersion = "25.0.2"
+    globalTargetSdkVersion = 25
+    globalMinSdkVersion = 16
+
+    globalVersionCode = 1
+    globalVersionName = "1.0"
+
+    supportVersion = '25.3.1'
+}
